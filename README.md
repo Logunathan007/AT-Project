@@ -10,6 +10,6 @@ cd store
 ./Scripts/activate
 pip install Flask
 
-then cloning tha github url()
+then cloning tha github url->https://github.com/Logunathan007/AT-Project.git
 
 python main.py
