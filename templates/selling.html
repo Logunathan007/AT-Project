@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selling</title>
+    
+    <!-- <link rel="stylesheet" href="/project/static/purchase_style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='purchase_style.css') }}">
+   
+</head>
+<body>
+    <div>
+        <a style="text-decoration:none" href="{{url_for('home',name=name)}}"><button type="submit"> Back </button></a>
+    </div>
+    <h2 style="color: antiquewhite;">Available Balance is : {{balance}}</h2><br>
+    <div class="wrapper">
+        <form action="{{ url_for('selling',id=id,p_name=product_name,name=name) }}" method = "post">
+            <h1>{{ product_name }}</h1>
+            <h2 style="justify-content: space-between; display: flex;"><span>Count is {{ count }}</span> <span>Cost Price: {{cost_price}}</span> </h2>
+            {% if error %}
+                <h3 style="text-align:center; padding-top :20px; color: red;">{{ msg }}</h3>
+            {% endif %}
+            <br>
+            <div class="input-box">
+                <h3> Selling Price : <input type="number" placeholder="Selling Price" id="sp" name = "sp" required onblur="checkPrice();"></h3>
+            </div>
+            <div class="input-box">
+                <h3> Quantity    : <input type="number" placeholder="Quantity" name = "quantity" required></h3>
+            </div>
+            <button style="margin-left: auto; margin-right: auto;display: flex;" type="submit" class="btn">Sell</button>
+        </form>
+    </div>
+</body>
+</html>

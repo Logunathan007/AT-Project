@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="wrapper">
+        <form action="/" method = "post">
+            <h1>Namma Kadai</h1>
+            {% if error %}
+                <h3 style="text-align:center; padding-top :20px; color: red;">{{ msg }}</h3>
+            {% endif %}
+            <div class="input-box">
+                <input type="text" placeholder="User Name" name = "name" required>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" name = "pass1" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <div class="register-link">
+                <p>
+                    Don't have an account? <a href="/register">Register</a>
+                </p>
+            </div>
+        </form>
+    </div>
+    <script>
+        history.pushState(null, null, location.href);
+        window.onpopstate = function(event) {
+            history.go(1);
+         };
+    </script>
+
+</body>
+</html>

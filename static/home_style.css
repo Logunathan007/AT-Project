@@ -1,0 +1,114 @@
+body{
+    width: 95%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("bg_img.png");
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position:center;
+    min-height: 100vh;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+nav h1{
+    font-weight: 600;
+    color: #fff;
+}
+button{
+    border:0px;
+    outline: 0px;
+    display: inline;
+    background-color: #db0001;
+    border-radius: 4px;
+    color:#fff;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+.h-page{
+    padding: 10px 12%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.h-page h1{
+    font-weight: 600;
+    font-size: 40px;
+} 
+.accordion{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+    border: 2px solid rgba(255,255,255,.2);
+    color: white;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 30px;
+}
+.accordion li{
+    list-style: none;
+    width:100% ;
+    padding: 5px;
+}
+.accordion label{
+    display: flex;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    background: #7aa0228e;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+.accordion li label{
+    display: flex;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    background: #7aa0228e;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+table{
+    width: 100%;
+}
+table tr td{
+    width: 33%;
+}
+input[type="radio"]{
+    display: none;
+}
+.accordion .content{
+    background: #7aa0228e;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s,padding 0.5s;
+}
+.accordion input[type="radio"]:checked + label + .content{
+    max-height:600px;
+    padding:30px 20px;
+}
+.accordion .content .input-box{
+    display: flex;
+    flex-direction: row;
+}
+
+.input-box input{
+    width: 40%;
+    height: 30px;
+    margin-right: 40px;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255,255,255,.2);
+    border-radius:10px;
+    font-size: 14px;
+    padding:5px 45px 5px 20px;
+}

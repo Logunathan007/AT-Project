@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ 
+
+</head>
+<body>
+    <div class="wrapper">
+        <form action="/register" method="POST">
+            <h1>Namma Kadai Registration</h1>
+            {% if error %}
+                <h3 style="text-align:center; padding-top :20px; color: red;">{{ msg }}</h3>
+            {% endif %}
+            <div class="input-box">
+                <input type="text" placeholder="User Name" name = "name" required>
+            </div>
+            <div class="input-box" class="passw">
+                <input type="password" placeholder="Password" name = "pass1" required>
+            </div>
+            <div class="input-box" class="passw">
+                <input type="password" placeholder="Confirm Password" name="pass2" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+</body>
+</html>
